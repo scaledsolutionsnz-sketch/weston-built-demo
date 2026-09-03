@@ -9,22 +9,22 @@
 <meta property="og:description" content="Renovations, extensions and alterations for homes across Feilding and the Manawatū, by a Licensed Building Practitioner.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero-exterior.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f2b24'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23f5f4ef' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --pine:#1f2b24;
-  --pine-soft:#2a382f;
-  --paper:#fbfaf6;
-  --bone:#f2f1e9;
-  --ink:#232a24;
-  --body:#48524a;
-  --accent:#3d7350;
-  --accent-deep:#2f5a3e;
-  --line:rgba(35,42,36,.12);
-  --line-light:rgba(245,244,239,.16);
+  --pine:#101820;
+  --pine-soft:#1a2632;
+  --paper:#fbfcfd;
+  --bone:#eef2f6;
+  --ink:#101820;
+  --body:#4d5966;
+  --accent:#00a8f5;
+  --accent-deep:#0080bd;
+  --line:rgba(16,24,32,.12);
+  --line-light:rgba(255,255,255,.18);
   --radius:14px;
   --ease:cubic-bezier(.16,1,.3,1);
 }
@@ -48,18 +48,17 @@ a{color:var(--accent-deep)}
 /* ---------- intro ---------- */
 .intro{position:fixed;inset:0;z-index:200;background:var(--pine);display:flex;align-items:center;justify-content:center;transition:opacity .7s var(--ease),visibility .7s}
 .intro.gone{opacity:0;visibility:hidden}
-.intro span{font-family:'Zilla Slab',serif;font-size:1.9rem;letter-spacing:.14em;color:var(--bone);opacity:0;animation:introIn .9s var(--ease) .15s forwards}
+.intro img{width:min(300px,64vw);opacity:0;animation:introIn .9s var(--ease) .15s forwards}
 @keyframes introIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* ---------- nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s;padding:14px 0}
 .nav.scrolled{background:rgba(251,250,246,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
 .nav-in{max-width:1180px;margin:0 auto;padding:0 22px;display:flex;align-items:center;gap:26px}
-.brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:1.28rem;letter-spacing:.08em;color:var(--bone);text-decoration:none;white-space:nowrap;transition:color .35s}
-.nav.scrolled .brand{color:var(--ink)}
-.brand b{color:var(--accent);font-weight:700}
+.brand{display:flex;align-items:center;text-decoration:none;flex:0 0 auto}
+.brand img{height:48px;width:auto;display:block}
 .nav-links{display:flex;gap:24px;margin-left:auto;align-items:center}
-.nav-links a{font-weight:600;font-size:.98rem;text-decoration:none;color:rgba(245,244,239,.92);transition:color .25s}
+.nav-links a{font-weight:600;font-size:.98rem;text-decoration:none;color:rgba(238,242,246,.92);transition:color .25s}
 .nav.scrolled .nav-links a{color:var(--body)}
 .nav-links a:hover{color:var(--accent)}
 .nav-call{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;background:var(--accent);color:#fff !important;font-weight:700;line-height:1;text-decoration:none;transition:background .25s,transform .25s}
@@ -71,7 +70,7 @@ a{color:var(--accent-deep)}
 .m-menu a{color:var(--bone);text-decoration:none;font-size:1.15rem;font-weight:600;padding:12px 0;border-bottom:1px solid var(--line-light)}
 .m-menu .nav-call{border-bottom:0;margin-top:18px;justify-content:center}
 .m-close{position:absolute;top:20px;right:20px;background:none;border:0;color:var(--bone);cursor:pointer;padding:8px}
-.scrim{position:fixed;inset:0;background:rgba(31,43,36,.45);z-index:140;opacity:0;visibility:hidden;transition:opacity .35s}
+.scrim{position:fixed;inset:0;background:rgba(16,24,32,.45);z-index:140;opacity:0;visibility:hidden;transition:opacity .35s}
 .scrim.show{opacity:1;visibility:visible}
 
 /* ---------- hero ---------- */
@@ -80,25 +79,25 @@ a{color:var(--accent-deep)}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
 .hero-slide.on{opacity:1}
 .hero-slide img{width:100%;height:100%;object-fit:cover}
-.hero-veil{position:absolute;inset:0;background:linear-gradient(100deg,rgba(31,43,36,.82) 0%,rgba(31,43,36,.55) 52%,rgba(31,43,36,.32) 100%)}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(100deg,rgba(16,24,32,.82) 0%,rgba(16,24,32,.55) 52%,rgba(16,24,32,.32) 100%)}
 .hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:120px 22px 70px;width:100%}
-.hero-eyebrow{display:inline-block;font-weight:700;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:#a9c9b2;margin-bottom:18px}
-.hero h1{color:#fdfcf8;font-size:clamp(2.5rem,5.6vw,4.1rem);font-weight:700;max-width:15ch;text-wrap:balance}
-.hero-sub{color:rgba(245,244,239,.88);font-size:1.16rem;max-width:44ch;margin:20px 0 30px}
+.hero-eyebrow{display:inline-block;font-weight:700;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;color:#7fd4ff;margin-bottom:18px}
+.hero h1{color:#ffffff;font-size:clamp(2.5rem,5.6vw,4.1rem);font-weight:700;max-width:15ch;text-wrap:balance}
+.hero-sub{color:rgba(238,242,246,.88);font-size:1.16rem;max-width:44ch;margin:20px 0 30px}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 30px;border-radius:999px;font-family:'Assistant',sans-serif;font-size:1.04rem;font-weight:700;line-height:1;text-decoration:none;cursor:pointer;border:0;transition:transform .3s var(--ease),background .3s,box-shadow .3s}
 .btn:active{transform:scale(.98)}
 .btn-solid{background:var(--accent);color:#fff}
-.btn-solid:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(31,43,36,.6)}
-.btn-ghost{background:rgba(245,244,239,.12);color:#fdfcf8;border:1px solid rgba(245,244,239,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.btn-ghost:hover{background:rgba(245,244,239,.22);transform:translateY(-2px)}
-.hero-quote{margin-top:44px;max-width:430px;border:1px solid rgba(245,244,239,.28);background:rgba(31,43,36,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:var(--radius);padding:18px 22px;min-height:118px}
+.btn-solid:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(16,24,32,.6)}
+.btn-ghost{background:rgba(238,242,246,.12);color:#ffffff;border:1px solid rgba(238,242,246,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(238,242,246,.22);transform:translateY(-2px)}
+.hero-quote{margin-top:44px;max-width:430px;border:1px solid rgba(238,242,246,.28);background:rgba(16,24,32,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:var(--radius);padding:18px 22px;min-height:118px}
 .hq-stars{color:#e8c064;letter-spacing:2px;font-size:.95rem}
 .hq-slot{position:relative}
 .hq-item{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
 .hq-item.on{opacity:1;position:relative}
 .hq-text{color:rgba(251,250,246,.95);font-size:.99rem;line-height:1.55;margin-top:6px}
-.hq-name{color:#a9c9b2;font-weight:700;font-size:.88rem;margin-top:8px}
+.hq-name{color:#7fd4ff;font-weight:700;font-size:.88rem;margin-top:8px}
 
 /* ---------- sections ---------- */
 section{padding:96px 0}
@@ -112,7 +111,7 @@ section{padding:96px 0}
 .services{background:var(--paper)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .svc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
-.svc-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(35,42,36,.35)}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(16,24,32,.35)}
 .svc-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(.85) contrast(1.05)}
 .svc-body{padding:22px 24px 26px}
 .svc-tag{display:flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
@@ -133,38 +132,38 @@ section{padding:96px 0}
 .checklist svg{flex:0 0 auto;color:var(--accent);margin-top:3px}
 
 /* ---------- crew ---------- */
-.crew-note{display:inline-block;font-size:.82rem;font-weight:700;color:var(--accent-deep);background:rgba(61,115,80,.1);border:1px solid rgba(61,115,80,.25);padding:4px 12px;border-radius:999px;margin-bottom:14px}
+.crew-note{display:inline-block;font-size:.82rem;font-weight:700;color:var(--accent-deep);background:rgba(0,168,245,.12);border:1px solid rgba(0,168,245,.3);padding:4px 12px;border-radius:999px;margin-bottom:14px}
 .crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .crew-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 26px;text-align:center;transition:transform .35s var(--ease),box-shadow .35s}
-.crew-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(35,42,36,.3)}
+.crew-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(16,24,32,.3)}
 .avatar{width:92px;height:92px;border-radius:50%;margin:0 auto 18px;background:var(--pine);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Zilla Slab',serif;font-size:1.7rem;font-weight:700;color:var(--bone)}
 .crew-card h3{font-size:1.22rem}
 .crew-role{color:var(--accent-deep);font-weight:700;font-size:.92rem;margin:4px 0 12px}
 .crew-card p{font-size:.95rem;line-height:1.6}
-.crew-ex{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5d6659;border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.crew-ex{display:inline-block;margin-top:12px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b7885;border:1px solid var(--line);padding:3px 10px;border-radius:999px}
 
 /* ---------- reviews ---------- */
 .reviews{background:var(--paper)}
 .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:40px}
 .rev-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:12px;transition:transform .35s var(--ease),box-shadow .35s}
-.rev-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(35,42,36,.3)}
+.rev-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(16,24,32,.3)}
 .rev-stars{color:#e8c064;letter-spacing:2px}
 .rev-text{font-size:.99rem;line-height:1.65;color:var(--body)}
 .rev-meta{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .rev-name{font-weight:700;color:var(--ink)}
-.rev-date{font-size:.85rem;color:#5d6659}
+.rev-date{font-size:.85rem;color:#6b7885}
 .rev-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.rev-badge{font-size:.85rem;color:#5d6659;margin-top:18px}
+.rev-badge{font-size:.85rem;color:#6b7885;margin-top:18px}
 
 /* ---------- review banner ---------- */
 .banner{background:var(--pine);padding:70px 0}
 .banner-in{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
 .banner h2{color:var(--bone);font-size:clamp(1.6rem,3vw,2.2rem);max-width:22ch}
-.banner p{color:rgba(245,244,239,.75);margin-top:8px;max-width:46ch}
+.banner p{color:rgba(238,242,246,.75);margin-top:8px;max-width:46ch}
 
 /* ---------- contact ---------- */
 .contact{background:var(--bone)}
-.contact-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 30px 60px -35px rgba(35,42,36,.35)}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 30px 60px -35px rgba(16,24,32,.35)}
 .contact-map{min-height:460px}
 .contact-map iframe{width:100%;height:100%;border:0;display:block}
 .contact-info{padding:44px 42px;display:flex;flex-direction:column;gap:14px}
@@ -183,49 +182,48 @@ section{padding:96px 0}
 .socials a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px)}
 
 /* ---------- footer ---------- */
-footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
+footer{background:var(--pine);color:rgba(238,242,246,.8);padding:60px 0 34px}
 .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid var(--line-light)}
-.foot-brand{font-family:'Zilla Slab',serif;font-weight:700;font-size:1.3rem;letter-spacing:.08em;color:var(--bone)}
-.foot-brand b{color:#8fbf9d}
+.foot-brand img{height:58px;width:auto;display:block}
 .foot-col p{max-width:34ch;font-size:.95rem;margin-top:10px}
 .foot-col .foot-h{color:var(--bone);font-family:'Assistant',sans-serif;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
 .foot-col ul{list-style:none;display:grid;gap:9px}
-.foot-col a{color:rgba(245,244,239,.8);text-decoration:none;font-size:.97rem}
-.foot-col a:hover{color:#8fbf9d}
+.foot-col a{color:rgba(238,242,246,.8);text-decoration:none;font-size:.97rem}
+.foot-col a:hover{color:#7fd4ff}
 .foot-social{display:flex;gap:12px;margin-top:14px}
 .foot-social a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-light);display:flex;align-items:center;justify-content:center;color:var(--bone);transition:background .25s,transform .25s}
 .foot-social a:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
-.foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:.88rem;color:rgba(245,244,239,.55)}
-.foot-base a{color:rgba(245,244,239,.7);text-decoration:none}
-.foot-base a:hover{color:#8fbf9d}
+.foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:.88rem;color:rgba(238,242,246,.55)}
+.foot-base a{color:rgba(238,242,246,.7);text-decoration:none}
+.foot-base a:hover{color:#7fd4ff}
 
 /* ---------- before & after ---------- */
 .ba{background:var(--bone)}
 .ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .ba-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
-.ba-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(35,42,36,.35)}
+.ba-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(16,24,32,.35)}
 .ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
 .ba-shot{position:relative;overflow:hidden;background:var(--pine)}
 .ba-shot img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .6s var(--ease)}
 .ba-card:hover .ba-shot img{transform:scale(1.04)}
-.ba-shot figcaption{position:absolute;top:12px;left:12px;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:rgba(31,43,36,.85);color:var(--bone);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ba-shot figcaption{position:absolute;top:12px;left:12px;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:rgba(16,24,32,.85);color:var(--bone);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .ba-shot.is-after figcaption{background:var(--accent);color:#fff}
 .ba-body{padding:20px 24px 24px}
 .ba-body h3{font-size:1.16rem;margin-bottom:6px}
 .ba-body p{font-size:.95rem;line-height:1.6}
-.ba-foot{margin-top:34px;font-size:.9rem;color:#5d6659}
+.ba-foot{margin-top:34px;font-size:.9rem;color:#6b7885}
 
 /* ---------- exhibitions ---------- */
 .exhib{background:var(--pine)}
 .exhib .sec-head h2,.exhib h3{color:var(--bone)}
-.exhib .sec-head p{color:rgba(245,244,239,.75)}
+.exhib .sec-head p{color:rgba(238,242,246,.75)}
 .exhib-top{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;margin-bottom:52px}
-.exhib-copy p{color:rgba(245,244,239,.8);margin-bottom:16px}
+.exhib-copy p{color:rgba(238,242,246,.8);margin-bottom:16px}
 .exhib-logo{display:inline-flex;background:var(--paper);border-radius:12px;padding:18px 24px;margin-bottom:24px}
 .exhib-logo img{width:min(260px,62vw);display:block}
 .exhib-list{list-style:none;display:grid;gap:14px;margin-top:24px}
 .exhib-list li{display:flex;gap:12px;align-items:flex-start;color:var(--bone);font-weight:600}
-.exhib-list svg{flex:0 0 auto;color:#8fbf9d;margin-top:3px}
+.exhib-list svg{flex:0 0 auto;color:#7fd4ff;margin-top:3px}
 .exhib-feature{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-light);position:relative}
 .exhib-feature img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
 .exhib-feature span{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;background:linear-gradient(transparent,rgba(20,29,24,.9));color:var(--bone);font-size:.92rem;font-weight:600}
@@ -237,8 +235,8 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
 .exhib-events{margin-top:44px;padding-top:34px;border-top:1px solid var(--line-light)}
 .exhib-events .foot-h{color:var(--bone);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
 .pill-row{display:flex;flex-wrap:wrap;gap:10px}
-.pill{display:inline-flex;align-items:baseline;gap:8px;border:1px solid var(--line-light);border-radius:999px;padding:9px 18px;font-size:.93rem;color:rgba(245,244,239,.88)}
-.pill b{color:#8fbf9d;font-weight:700}
+.pill{display:inline-flex;align-items:baseline;gap:8px;border:1px solid var(--line-light);border-radius:999px;padding:9px 18px;font-size:.93rem;color:rgba(238,242,246,.88)}
+.pill b{color:#7fd4ff;font-weight:700}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
@@ -253,6 +251,8 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
 }
 @media (max-width:700px){
   body{font-size:16px}
+  .brand img{height:38px}
+  .foot-brand img{height:48px}
   section{padding:70px 0}
   .nav-links{display:none}
   .burger{display:block}
@@ -276,14 +276,14 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
 </head>
 <body>
 
-<div class="intro" id="intro" aria-hidden="true"><span>WESTON BUILT</span></div>
+<div class="intro" id="intro" aria-hidden="true"><img src="img/weston-built-logo.png" alt=""></div>
 
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a class="brand" href="#top">WESTON <b>BUILT</b></a>
+    <a class="brand" href="#top"><img src="img/weston-built-logo.png" alt="Weston Built" width="900" height="300"></a>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Our work</a>
       <a href="#about">About</a>
       <a href="#exhibitions">Exhibitions</a>
       <a href="#reviews">Reviews</a>
@@ -305,7 +305,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <a href="#services">Services</a>
-  <a href="#projects">Projects</a>
+  <a href="#projects">Our work</a>
   <a href="#about">About</a>
   <a href="#exhibitions">Exhibitions</a>
   <a href="#reviews">Reviews</a>
@@ -318,15 +318,15 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
 
 <header class="hero" id="top">
   <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide on"><img src="img/hero-exterior.jpg" alt="Modern timber-clad home at dusk" fetchpriority="high"></div>
-    <div class="hero-slide"><img src="img/hero-framing.jpg" alt="Builder cutting framing timber with a circular saw" loading="lazy"></div>
-    <div class="hero-slide"><img src="img/hero-interior.jpg" alt="Open-plan living area after a renovation" loading="lazy"></div>
+    <div class="hero-slide on"><img src="img/hero-exterior.jpg" alt="Cedar-clad home built by Weston Built" fetchpriority="high"></div>
+    <div class="hero-slide"><img src="img/hero-framing.jpg" alt="House mid-renovation and the same house finished" loading="lazy"></div>
+    <div class="hero-slide"><img src="img/hero-interior.jpg" alt="Open-plan living and kitchen with exposed beams" loading="lazy"></div>
   </div>
   <div class="hero-veil"></div>
   <div class="hero-in">
     <span class="hero-eyebrow">Feilding and the Manawatū</span>
     <h1>Renovations and extensions, built properly.</h1>
-    <p class="hero-sub">Weston Built handles home renovations, alterations and extensions around Feilding. One builder to deal with, from first look to final fix.</p>
+    <p class="hero-sub">Renovations, alterations and extensions around Feilding. One builder, start to finish.</p>
     <div class="hero-ctas">
       <a class="btn btn-solid" href="#contact">Get a quote</a>
       <a class="btn btn-ghost" href="tel:+64223187825">Call 022 318 7825</a>
@@ -342,55 +342,55 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>What Scott can take on</h2>
-      <p>From a leaky weatherboard to a whole new living wing. If it involves timber, tools and a tidy finish, it fits.</p>
+      <p>From a leaky weatherboard to a whole new living wing.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
-        <img src="img/svc-reno.jpg" alt="Renovated open-plan living and kitchen area" loading="lazy" width="1200" height="816">
+        <img src="img/svc-reno.jpg" alt="Renovated hallway with painted feature arches and new flooring" loading="lazy">
         <div class="svc-body">
           <div class="svc-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 8.8V21h14V8.8"/></svg>Inside &amp; out</div>
           <h3>Home renovations</h3>
-          <p>Tired rooms opened up, relined and finished so the whole house feels new again.</p>
+          <p>Tired rooms opened up, relined and finished properly.</p>
         </div>
       </div>
       <div class="svc-card reveal">
-        <img src="img/svc-extension.jpg" alt="Modern extension on a family home" loading="lazy" width="1200" height="1006">
+        <img src="img/svc-extension.jpg" alt="Dormer extension built and clad, shown at each stage" loading="lazy">
         <div class="svc-body">
           <div class="svc-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><path d="M11 7h6a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-6a4 4 0 0 1-4-4v-6"/></svg>More room</div>
           <h3>House extensions</h3>
-          <p>Extra bedrooms, bigger living areas and sleepouts that match the house they join.</p>
+          <p>Extra bedrooms, dormers and living areas that match the house they join.</p>
         </div>
       </div>
       <div class="svc-card reveal">
-        <img src="img/svc-kitchen.jpg" alt="Freshly fitted kitchen with new cabinetry" loading="lazy" width="1200" height="719">
+        <img src="img/svc-kitchen.jpg" alt="New kitchen with white cabinetry and dark benchtops" loading="lazy">
         <div class="svc-body">
           <div class="svc-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h16v7H4z"/><path d="M4 10v11h16V10"/><path d="M9 14h6"/></svg>Wet areas</div>
           <h3>Kitchens &amp; bathrooms</h3>
-          <p>The two rooms that sell a house, gutted and rebuilt with the trades lined up for you.</p>
+          <p>Gutted and rebuilt, with the trades lined up for you.</p>
         </div>
       </div>
       <div class="svc-card reveal">
-        <img src="img/about-weatherboard.jpg" alt="White weatherboard gable on a New Zealand home" loading="lazy" width="1200" height="1800">
+        <img src="img/svc-reclad.jpg" alt="Villa reclad in dark weatherboard, before and after" loading="lazy">
         <div class="svc-body">
           <div class="svc-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h18"/></svg>Exteriors</div>
           <h3>Alterations &amp; recladding</h3>
-          <p>Walls moved, windows swapped, weatherboards repaired or replaced before winter finds the gaps.</p>
+          <p>Walls moved, windows swapped, weatherboards replaced.</p>
         </div>
       </div>
       <div class="svc-card reveal">
-        <img src="img/svc-plans.jpg" alt="Builder marking up house plans at a desk" loading="lazy" width="1200" height="675">
+        <img src="img/svc-plans.jpg" alt="Bathroom stripped back to framing before structural work" loading="lazy">
         <div class="svc-body">
           <div class="svc-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Paperwork</div>
           <h3>Plans &amp; consent work</h3>
-          <p>Restricted building work signed off by a Licensed Building Practitioner, with council kept onside.</p>
+          <p>Restricted building work signed off by an LBP, council kept onside.</p>
         </div>
       </div>
       <div class="svc-card reveal">
-        <img src="img/svc-repairs.jpg" alt="Cordless drill on a floor mid-renovation" loading="lazy" width="1200" height="712">
+        <img src="img/svc-repairs.jpg" alt="Roof, flashing and soffit repairs on an older home" loading="lazy">
         <div class="svc-body">
           <div class="svc-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L15 12l-3-3Z"/></svg>Small jobs</div>
           <h3>Repairs &amp; maintenance</h3>
-          <p>Sticking doors, rotten sills, sagging decks. The job list you keep putting off, knocked out in a visit.</p>
+          <p>Sticking doors, rotten sills, sagging decks, roof and flashing repairs.</p>
         </div>
       </div>
     </div>
@@ -400,8 +400,8 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
 <section class="ba" id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Before and after</h2>
-      <p>Same rooms, a few weeks apart. Rot cut out, floors rebuilt, waterproofing done properly, then finished to the standard you actually wanted.</p>
+      <h2>Our work</h2>
+      <p>Same rooms, a few weeks apart. Rot cut out, floors rebuilt, waterproofing done properly.</p>
     </div>
     <div class="ba-grid">
 
@@ -469,12 +469,12 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap">
     <div class="about-grid">
       <div class="about-photo reveal">
-        <img src="img/hero-framing.jpg" alt="Cutting framing timber on site" loading="lazy" width="2000" height="1125">
+        <img src="img/about-weatherboard.jpg" alt="New laundry fit-out with tiled splashback and timber benchtop" loading="lazy">
       </div>
       <div class="about-copy reveal">
         <h2>A local builder you can actually get hold of</h2>
-        <p>Weston Built is run by Scott Weston out of Feilding. You deal with Scott from the first walk-through to the last coat of paint, so nothing gets lost between an office and the site.</p>
-        <p>Every job starts with a straight conversation about what you want, what it will cost and how long it will take. Then the work gets done the way it was quoted.</p>
+        <p>Weston Built is run by Scott Weston out of Feilding. You deal with Scott from the first walk-through to the last coat of paint.</p>
+        <p>Every job starts with a straight conversation about cost and timeframe. Then the work gets done the way it was quoted.</p>
         <ul class="checklist">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Licensed Building Practitioner</li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Clear quotes before any work starts</li>
@@ -489,7 +489,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Exhibition stands and display builds</h2>
-      <p>Weston Built contracts to businesses right across New Zealand, including Canterbury-based Prestige Design NZ, building the stands you walk into at the big field days.</p>
+      <p>Weston Built also contracts to Canterbury-based Prestige Design NZ, building the stands you walk into at the big field days.</p>
     </div>
 
     <div class="exhib-top">
@@ -541,14 +541,14 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
     <div class="sec-head reveal">
       <span class="crew-note">Example team layout</span>
       <h2>Who turns up on site</h2>
-      <p>Small crew, short chain of command. The person quoting the job is the person building it.</p>
+      <p>The person quoting the job is the person building it.</p>
     </div>
     <div class="crew-grid">
       <div class="crew-card reveal">
         <div class="avatar">SW</div>
         <h3>Scott Weston</h3>
         <div class="crew-role">Owner / Builder</div>
-        <p>Quotes every job, runs every site and swings a hammer on all of them. Your one point of contact.</p>
+        <p>Quotes every job, runs every site. Your one point of contact.</p>
       </div>
       <div class="crew-card reveal">
         <div class="avatar">SC</div>
@@ -572,7 +572,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>What clients say</h2>
-      <p>Example reviews written for this demo. Scott's real Google reviews will sit here once his profile is connected.</p>
+      <p>Example reviews for this demo. Scott's real Google reviews will sit here once his profile is connected.</p>
     </div>
     <div class="rev-grid">
       <div class="rev-card reveal">
@@ -602,7 +602,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap banner-in">
     <div class="reveal">
       <h2>Happy with our work? Leave us a review</h2>
-      <p>A quick review on Google helps other Manawatū homeowners find a builder they can trust.</p>
+      <p>A quick review helps other Manawatū homeowners find a builder they can trust.</p>
     </div>
     <a class="btn btn-solid reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Weston%20Built%20Feilding%20New%20Zealand" target="_blank" rel="noopener">Leave a review</a>
   </div>
@@ -612,7 +612,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>Talk to Scott about your job</h2>
-      <p>No forms, no call centre. Ring or email and you get the builder, not a bot.</p>
+      <p>Ring or email and you get the builder, not a bot.</p>
     </div>
     <div class="contact-card reveal">
       <div class="contact-map">
@@ -664,7 +664,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
-        <div class="foot-brand">WESTON <b>BUILT</b></div>
+        <div class="foot-brand"><img src="img/weston-built-logo.png" alt="Weston Built" loading="lazy" width="900" height="300"></div>
         <p>Renovations, alterations and extensions for homes across Feilding and the Manawatū.</p>
         <div class="foot-social">
           <a href="https://www.facebook.com/p/Weston-Developments-100087305770506/" target="_blank" rel="noopener" aria-label="Weston Built on Facebook">
@@ -679,7 +679,7 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
         <p class="foot-h">Site</p>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#projects">Before &amp; after</a></li>
+          <li><a href="#projects">Our work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#exhibitions">Exhibition stands</a></li>
           <li><a href="#reviews">Reviews</a></li>
@@ -709,9 +709,9 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   /* intro */
   var intro = document.getElementById('intro');
   window.addEventListener('load', function(){
-    setTimeout(function(){ intro.classList.add('gone'); }, reduced ? 0 : 900);
+    setTimeout(function(){ intro.classList.add('gone'); }, reduced ? 0 : 550);
   });
-  setTimeout(function(){ intro.classList.add('gone'); }, 2500);
+  setTimeout(function(){ intro.classList.add('gone'); }, 1600);
 
   /* nav */
   var nav = document.getElementById('nav');
