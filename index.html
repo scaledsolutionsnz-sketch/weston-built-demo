@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Weston Built | Builders, Feilding</title>
-<meta name="description" content="Weston Built is Scott Weston's building company in Feilding. Renovations, extensions, alterations and repairs for homes across the Manawatū. Call 022 318 7825 for a quote.">
+<meta name="description" content="Weston Built is Scott Weston's building company in Feilding. Renovations, extensions, alterations and repairs across the Manawatū, plus exhibition stand and display builds for Prestige Design NZ. Call 022 318 7825 for a quote.">
 <meta property="og:title" content="Weston Built | Builders, Feilding">
 <meta property="og:description" content="Renovations, extensions and alterations for homes across Feilding and the Manawatū, by a Licensed Building Practitioner.">
 <meta property="og:type" content="website">
@@ -199,9 +199,53 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
 .foot-base a{color:rgba(245,244,239,.7);text-decoration:none}
 .foot-base a:hover{color:#8fbf9d}
 
+/* ---------- before & after ---------- */
+.ba{background:var(--bone)}
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.ba-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
+.ba-card:hover{transform:translateY(-6px);box-shadow:0 24px 44px -22px rgba(35,42,36,.35)}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.ba-shot{position:relative;overflow:hidden;background:var(--pine)}
+.ba-shot img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.ba-card:hover .ba-shot img{transform:scale(1.04)}
+.ba-shot figcaption{position:absolute;top:12px;left:12px;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:rgba(31,43,36,.85);color:var(--bone);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ba-shot.is-after figcaption{background:var(--accent);color:#fff}
+.ba-body{padding:20px 24px 24px}
+.ba-body h3{font-size:1.16rem;margin-bottom:6px}
+.ba-body p{font-size:.95rem;line-height:1.6}
+.ba-foot{margin-top:34px;font-size:.9rem;color:#5d6659}
+
+/* ---------- exhibitions ---------- */
+.exhib{background:var(--pine)}
+.exhib .sec-head h2,.exhib h3{color:var(--bone)}
+.exhib .sec-head p{color:rgba(245,244,239,.75)}
+.exhib-top{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;margin-bottom:52px}
+.exhib-copy p{color:rgba(245,244,239,.8);margin-bottom:16px}
+.exhib-logo{display:inline-flex;background:var(--paper);border-radius:12px;padding:18px 24px;margin-bottom:24px}
+.exhib-logo img{width:min(260px,62vw);display:block}
+.exhib-list{list-style:none;display:grid;gap:14px;margin-top:24px}
+.exhib-list li{display:flex;gap:12px;align-items:flex-start;color:var(--bone);font-weight:600}
+.exhib-list svg{flex:0 0 auto;color:#8fbf9d;margin-top:3px}
+.exhib-feature{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-light);position:relative}
+.exhib-feature img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.exhib-feature span{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;background:linear-gradient(transparent,rgba(20,29,24,.9));color:var(--bone);font-size:.92rem;font-weight:600}
+.exhib-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.exhib-shot{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-light);position:relative}
+.exhib-shot img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .6s var(--ease)}
+.exhib-shot:hover img{transform:scale(1.05)}
+.exhib-shot span{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;background:linear-gradient(transparent,rgba(20,29,24,.9));color:var(--bone);font-size:.88rem;font-weight:600}
+.exhib-events{margin-top:44px;padding-top:34px;border-top:1px solid var(--line-light)}
+.exhib-events .foot-h{color:var(--bone);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:baseline;gap:8px;border:1px solid var(--line-light);border-radius:999px;padding:9px 18px;font-size:.93rem;color:rgba(245,244,239,.88)}
+.pill b{color:#8fbf9d;font-weight:700}
+
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .svc-grid,.crew-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+  .ba-grid{grid-template-columns:1fr}
+  .exhib-top{grid-template-columns:1fr;gap:38px}
+  .exhib-gal{grid-template-columns:repeat(2,1fr)}
   .about-grid{grid-template-columns:1fr;gap:38px}
   .contact-card{grid-template-columns:1fr}
   .contact-map{order:2;min-height:320px}
@@ -214,6 +258,9 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   .burger{display:block}
   .m-menu{display:flex}
   .svc-grid,.crew-grid,.rev-grid{grid-template-columns:1fr}
+  .exhib-gal{grid-template-columns:1fr}
+  .ba-body{padding:16px 18px 20px}
+  .ba-shot figcaption{top:9px;left:9px;font-size:.62rem;padding:4px 9px}
   .hero-in{padding-top:104px}
   .hero-quote{max-width:100%}
   .banner-in{flex-direction:column;align-items:flex-start}
@@ -236,7 +283,9 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
     <a class="brand" href="#top">WESTON <b>BUILT</b></a>
     <div class="nav-links">
       <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
       <a href="#about">About</a>
+      <a href="#exhibitions">Exhibitions</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
       <a class="nav-call" href="tel:+64223187825">
@@ -256,7 +305,9 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
   <a href="#about">About</a>
+  <a href="#exhibitions">Exhibitions</a>
   <a href="#reviews">Reviews</a>
   <a href="#contact">Contact</a>
   <a class="nav-call" href="tel:+64223187825">
@@ -346,6 +397,74 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
   </div>
 </section>
 
+<section class="ba" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Before and after</h2>
+      <p>Same rooms, a few weeks apart. Rot cut out, floors rebuilt, waterproofing done properly, then finished to the standard you actually wanted.</p>
+    </div>
+    <div class="ba-grid">
+
+      <div class="ba-card reveal">
+        <div class="ba-pair">
+          <figure class="ba-shot"><img src="img/ba-ensuite-before.jpg" alt="Ensuite stripped back to the bare slab with old tile adhesive" loading="lazy" width="1100" height="1097"><figcaption>Before</figcaption></figure>
+          <figure class="ba-shot is-after"><img src="img/ba-ensuite-after.jpg" alt="Finished ensuite with charcoal tiled walk-in shower and timber vanity" loading="lazy" width="1078" height="1100"><figcaption>After</figcaption></figure>
+        </div>
+        <div class="ba-body">
+          <h3>Ensuite, back to the slab</h3>
+          <p>Old tiles and adhesive ground off, floor levelled and re-waterproofed, then a tiled walk-in shower with a niche and a floating vanity.</p>
+        </div>
+      </div>
+
+      <div class="ba-card reveal">
+        <div class="ba-pair">
+          <figure class="ba-shot"><img src="img/ba-vanity-before.jpg" alt="Wall lining removed showing water damaged framing and bottom plate" loading="lazy" width="1100" height="1097"><figcaption>Before</figcaption></figure>
+          <figure class="ba-shot is-after"><img src="img/ba-vanity-after.jpg" alt="New vanity with round black mirror against marble-look tiles" loading="lazy" width="1040" height="1100"><figcaption>After</figcaption></figure>
+        </div>
+        <div class="ba-body">
+          <h3>Water damage, dealt with once</h3>
+          <p>Wet linings and a rotten bottom plate cut out and replaced before anything new went back on. Tiled, then a vanity, basin and mirror to finish.</p>
+        </div>
+      </div>
+
+      <div class="ba-card reveal">
+        <div class="ba-pair">
+          <figure class="ba-shot"><img src="img/ba-wetarea-before.jpg" alt="Old tiled wet area floor with corroded waste and rotten timber above" loading="lazy" width="1078" height="1100"><figcaption>Before</figcaption></figure>
+          <figure class="ba-shot is-after"><img src="img/ba-wetarea-after.jpg" alt="Fluted timber vanity with stone top and black tapware" loading="lazy" width="1034" height="1100"><figcaption>After</figcaption></figure>
+        </div>
+        <div class="ba-body">
+          <h3>Wet area rebuilt</h3>
+          <p>Failed waste and soaked framing replaced, new substrate and membrane laid, and a fluted vanity fitted over a fresh tiled floor.</p>
+        </div>
+      </div>
+
+      <div class="ba-card reveal">
+        <div class="ba-pair">
+          <figure class="ba-shot"><img src="img/ba-main-before.jpg" alt="Bathroom stripped to framing and bare floor mid-renovation" loading="lazy" width="1100" height="1100"><figcaption>Before</figcaption></figure>
+          <figure class="ba-shot is-after"><img src="img/ba-main-after.jpg" alt="Finished bathroom with timber-look tile floor and black tiled shower" loading="lazy" width="1100" height="1100"><figcaption>After</figcaption></figure>
+        </div>
+        <div class="ba-body">
+          <h3>Main bathroom, framing to finished</h3>
+          <p>Walls stripped back, plumbing and wiring re-run, then lined, tiled and fitted out with a tiled shower, toilet and heated towel rail.</p>
+        </div>
+      </div>
+
+      <div class="ba-card reveal">
+        <div class="ba-pair">
+          <figure class="ba-shot"><img src="img/ba-strip-before.jpg" alt="Bathroom gutted to studs with insulation exposed and new shower tray on the floor" loading="lazy" width="880" height="1100"><figcaption>Before</figcaption></figure>
+          <figure class="ba-shot is-after"><img src="img/ba-strip-after.jpg" alt="Finished bathroom with patterned tile floor, glass shower and bath" loading="lazy" width="880" height="1100"><figcaption>After</figcaption></figure>
+        </div>
+        <div class="ba-body">
+          <h3>Full strip-out and rebuild</h3>
+          <p>Taken back to the studs, re-insulated and relined, then a glass shower, bath and patterned tile floor put through the whole room.</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="ba-foot reveal">Photos from Weston Built jobs. More on the <a href="https://www.facebook.com/p/Weston-Developments-100087305770506/" target="_blank" rel="noopener">Facebook page</a>.</p>
+  </div>
+</section>
+
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-grid">
@@ -361,6 +480,57 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Clear quotes before any work starts</li>
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Based in Feilding, working across the Manawatū</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exhib" id="exhibitions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Exhibition stands and display builds</h2>
+      <p>Weston Built contracts to businesses right across New Zealand, including Canterbury-based Prestige Design NZ, building the stands you walk into at the big field days.</p>
+    </div>
+
+    <div class="exhib-top">
+      <div class="exhib-copy reveal">
+        <span class="exhib-logo"><img src="img/prestige-logo.png" alt="Prestige Design NZ, Events and Exhibitions" loading="lazy" width="900" height="300"></span>
+        <p>Prestige Design service events from Gore to Auckland. Every booth is custom designed around the business it belongs to, then wrapped in high quality printed graphics.</p>
+        <p>Furniture and custom wool-press benches are built in the workshop and trucked to the event. Everything from the flooring to the lighting is installed on site by Prestige.</p>
+        <ul class="exhib-list">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom booths designed per business</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Benches, counters and bar leaners built to order</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Flooring, walls and lighting installed on site</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Packed down and away when the event finishes</li>
+        </ul>
+      </div>
+      <figure class="exhib-feature reveal">
+        <img src="img/ev-woolpress.jpg" alt="Exhibition stand with custom timber wool-press benches and stools" loading="lazy" width="1300" height="1300">
+        <span>Custom wool-press benches, built in the workshop then trucked to the event</span>
+      </figure>
+    </div>
+
+    <div class="exhib-gal">
+      <figure class="exhib-shot reveal">
+        <img src="img/ev-allied.jpg" alt="Outdoor marquee exhibition stand fitted out with shelving and printed walls" loading="lazy" width="1254" height="1254">
+        <span>Outdoor marquee stand, fully fitted out</span>
+      </figure>
+      <figure class="exhib-shot reveal">
+        <img src="img/ev-sires.jpg" alt="Indoor exhibition stand with large printed wall graphics, counter and bar leaners" loading="lazy" width="1254" height="1254">
+        <span>Printed walls, counter and bar leaners</span>
+      </figure>
+      <figure class="exhib-shot reveal">
+        <img src="img/ev-lightwire.jpg" alt="Exhibition stand with custom joinery, planting wall and feature lighting" loading="lazy" width="1254" height="1254">
+        <span>Custom joinery, planting and feature lighting</span>
+      </figure>
+    </div>
+
+    <div class="exhib-events reveal">
+      <p class="foot-h">Stands built for events including</p>
+      <div class="pill-row">
+        <span class="pill"><b>Gore</b> Waimumu Southern Field Days</span>
+        <span class="pill"><b>Feilding</b> Central District Field Days</span>
+        <span class="pill"><b>Cambridge</b> Mystery Creek</span>
       </div>
     </div>
   </div>
@@ -509,7 +679,9 @@ footer{background:var(--pine);color:rgba(245,244,239,.8);padding:60px 0 34px}
         <p class="foot-h">Site</p>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Before &amp; after</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#exhibitions">Exhibition stands</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
